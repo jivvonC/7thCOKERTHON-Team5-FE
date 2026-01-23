@@ -45,6 +45,17 @@ body {
   font-family: Pretendard, system-ui, sans-serif;
 }
 
+/* 스크롤바 숨기기 */
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
 @layer components {
   /* Title*/
   .Title24_R {
@@ -203,4 +214,14 @@ body {
     line-height: 150%;
     letter-spacing: -3%;
   }
+}
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type='time']::-webkit-time-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
 }

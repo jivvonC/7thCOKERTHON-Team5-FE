@@ -1,11 +1,30 @@
 import './App.css';
-import Layout from './components/Layout';
+import Splash from './pages/Splash.tsx';
+import Login from './pages/Login.tsx';
+import SearchPage from './pages/SearchPage.tsx';
+import MyRoomPage from './pages/MyRoomPage.tsx';
+import CreateRoomPage from './pages/CreateRoomPage.tsx';
+import RoomDetailPage from './pages/RoomDetailPage.tsx';
+import Layout from './components/Layout.tsx';
+import MainLayout from './components/MainLayout.tsx';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
   return (
-    <Layout>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </Layout>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Navigate to="/splash" replace />}></Route>
+        <Route path="/splash" element={<Splash />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/room/:id" element={<RoomDetailPage />}></Route>
+      </Route>
+      <Route element={<MainLayout />}>
+        <Route path="/search" element={<SearchPage />}></Route>
+        <Route path="/myroom" element={<MyRoomPage />}></Route>
+        <Route path="/create" element={<CreateRoomPage />}></Route>
+      </Route>
+      <Route path="*" element={<Navigate to="/splash" replace />} />
+    </Routes>
   );
 }
 
