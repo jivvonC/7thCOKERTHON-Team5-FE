@@ -62,8 +62,38 @@ const convertApiRoomToRoom = (apiRoom: ApiRoom): Room => {
   };
 };
 
+// Mock 데이터
+const mockRooms: Room[] = [
+  {
+    id: 1,
+    level: '초급',
+    title: '누구든 함께해 환영방!',
+    date: '2026.01.29',
+    time: 'PM 6:00',
+    location: '여의도 한강공원',
+  },
+  {
+    id: 2,
+    level: '중급',
+    title: '누구든 함께해 환영방!',
+    date: '2026.01.29',
+    time: 'PM 6:00',
+    location: '한강공원',
+  },
+  {
+    id: 3,
+    level: '고급',
+    title: '누구든 함께해 환영방!',
+    date: '2026.01.29',
+    time: 'PM 6:00',
+    location: '한강공원',
+  },
+];
+
 export default function SearchPage() {
-  const [rooms, setRooms] = useState<Room[]>([]);
+  const [allRooms, setAllRooms] = useState<Room[]>([]); // 원본 방 리스트
+  const [filteredRooms, setFilteredRooms] = useState<Room[]>([]); // 필터링된 방 리스트
+  const [searchQuery, setSearchQuery] = useState<string>(''); // 검색어
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -71,7 +101,9 @@ export default function SearchPage() {
     const fetchRooms = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://43.202.168.163.nip.io/api/rooms');
+        const response = await fetch('https://43.202.168.163.nip.io/api/rooms', {
+          credentials: 'include', // 세션 쿠키 포함
+        });
         
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
@@ -81,14 +113,17 @@ export default function SearchPage() {
         
         if (data.success && data.data) {
           const convertedRooms = data.data.map(convertApiRoomToRoom);
-          setRooms(convertedRooms);
+          setAllRooms(convertedRooms);
+          setFilteredRooms(convertedRooms); // 초기에는 모든 방 표시
         } else {
           throw new Error(data.message || 'Failed to fetch rooms');
         }
       } catch (err) {
         console.error('Error fetching rooms:', err);
-        setError(err instanceof Error ? err.message : '방 목록을 불러오는데 실패했습니다.');
-        setRooms([]);
+        // API 연결 실패 시 mock 데이터 사용
+        setAllRooms(mockRooms);
+        setFilteredRooms(mockRooms);
+        setError(null);
       } finally {
         setLoading(false);
       }
@@ -96,6 +131,30 @@ export default function SearchPage() {
 
     fetchRooms();
   }, []);
+
+  // 검색어로 필터링하는 함수
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    if (!query.trim()) {
+      // 검색어가 비어있으면 모든 방 표시
+      setFilteredRooms(allRooms);
+    } else {
+      // 제목이나 위치에 검색어가 포함된 방만 필터링
+      const filtered = allRooms.filter(
+        (room) =>
+          room.title.toLowerCase().includes(query.toLowerCase()) ||
+          room.location.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredRooms(filtered);
+    }
+  };
+
+  // 엔터 키 입력 처리
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch(e.currentTarget.value);
+    }
+  };
 
   return (
     <div className="w-full h-full bg-B flex flex-col">
@@ -116,6 +175,9 @@ export default function SearchPage() {
           <input
             type="text"
             placeholder="방을 찾아 검색해보세요!"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
             className="flex-1 bg-transparent Body16_R text-[var(--color-N4)] outline-none placeholder:text-[var(--color-N4)]"
           />
         </div>
@@ -141,12 +203,14 @@ export default function SearchPage() {
           <div className="flex justify-center items-center py-8">
             <div className="text-red-500">오류: {error}</div>
           </div>
-        ) : rooms.length === 0 ? (
+        ) : filteredRooms.length === 0 ? (
           <div className="flex justify-center items-center py-8">
-            <div className="text-stone-50">참가 가능한 방이 없습니다.</div>
+            <div className="text-stone-50">
+              {searchQuery ? '검색 결과가 없습니다.' : '참가 가능한 방이 없습니다.'}
+            </div>
           </div>
         ) : (
-          <RoomCardList rooms={rooms} />
+          <RoomCardList rooms={filteredRooms} />
         )}
       </main>
     </div>
