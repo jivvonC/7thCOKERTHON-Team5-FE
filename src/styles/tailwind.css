@@ -204,3 +204,13 @@ body {
     letter-spacing: -3%;
   }
 }
+
+input[type='date']::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
+
+input[type='time']::-webkit-time-picker-indicator {
+  opacity: 0;
+  cursor: pointer;
+}
