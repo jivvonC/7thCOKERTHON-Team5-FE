@@ -7,6 +7,7 @@ import JoinListPage from './pages/JoinListPage.tsx';
 import SearchPage from './pages/SearchPage.tsx';
 import MyRoomPage from './pages/MyRoomPage.tsx';
 import CreateRoomPage from './pages/CreateRoomPage.tsx';
+import RoomDetailPage from './pages/RoomDetailPage.tsx';
 import Layout from './components/Layout.tsx';
 import MainLayout from './components/MainLayout.tsx';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -20,6 +21,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/join" element={<JoinPage />}></Route>
         <Route path="/joinlist" element={<JoinListPage />}></Route>
+        <Route path="/room/:id" element={<RoomDetailPage />}></Route>
       </Route>
       <Route element={<MainLayout />}>
         <Route path="/search" element={<SearchPage />}></Route>
