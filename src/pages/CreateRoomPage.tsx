@@ -66,7 +66,7 @@ export default function CreateRoomPage() {
 
       setIsOpen(true); // 성공 시 모달 오픈
     } catch (err) {
-      console.error(err);
+      console.log(error);
       setError('방 생성에 실패했어요.');
     } finally {
       setLoading(false);
