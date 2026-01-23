@@ -25,8 +25,8 @@ export default function Login() {
         password: pw,
       });
 
-      // ✅ 로그인 성공
-      navigate('/');
+      // 로그인 성공 - 방 찾기 탭으로 이동
+      navigate('/search');
     } catch (e) {
       setError('닉네임 또는 비밀번호가 올바르지 않아요');
     } finally {
