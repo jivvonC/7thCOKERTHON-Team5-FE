@@ -3,6 +3,7 @@ interface ModalProps {
   imageAlt?: string;
   message: string;
   buttonText: string;
+  buttonColor?: 'primary' | 'black';
   onButtonClick?: () => void;
   onClose?: () => void;
 }
@@ -12,6 +13,7 @@ export default function Modal({
   imageAlt = '모달 이미지',
   message,
   buttonText,
+  buttonColor = 'black',
   onButtonClick,
   onClose,
 }: ModalProps) {
@@ -45,7 +47,9 @@ export default function Modal({
         <button
           type="button"
           onClick={handleButtonClick}
-          className="w-[313px] p-[10px] left-1/2 transform -translate-x-1/2 top-[278px] absolute bg-[var(--color-B)] rounded-[10px] flex justify-center items-center gap-[10px]"
+          className={`w-[313px] p-[10px] left-1/2 transform -translate-x-1/2 top-[278px] absolute rounded-[10px] flex justify-center items-center gap-[10px] ${
+            buttonColor === 'primary' ? 'bg-[var(--color-Pri-R)]' : 'bg-[var(--color-B)]'
+          }`}
         >
           <div className="justify-center text-stone-50 text-base font-semibold font-['Pretendard'] leading-6">
             {buttonText}
