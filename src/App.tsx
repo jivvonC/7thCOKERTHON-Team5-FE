@@ -1,8 +1,6 @@
 import './App.css';
 import Splash from './pages/Splash.tsx';
 import Login from './pages/Login.tsx';
-import JoinPage from './pages/JoinPage.tsx';
-import JoinListPage from './pages/JoinListPage.tsx';
 import SearchPage from './pages/SearchPage.tsx';
 import MyRoomPage from './pages/MyRoomPage.tsx';
 import CreateRoomPage from './pages/CreateRoomPage.tsx';
@@ -18,8 +16,6 @@ function App() {
         <Route path="/" element={<Navigate to="/splash" replace />}></Route>
         <Route path="/splash" element={<Splash />}></Route>
         <Route path="/login" element={<Login />}></Route>
-        <Route path="/join" element={<JoinPage />}></Route>
-        <Route path="/joinlist" element={<JoinListPage />}></Route>
         <Route path="/room/:id" element={<RoomDetailPage />}></Route>
       </Route>
       <Route element={<MainLayout />}>
