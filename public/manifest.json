@@ -1,7 +1,7 @@
 {
-  "name": "CPKERTHON",
-  "short_name": "CPKERTHON",
-  "description": "CPKERTHON Team5 Frontend Application",
+  "name": "COKERTHON",
+  "short_name": "COKERTHON",
+  "description": "COKERTHON Team5 Frontend Application",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
