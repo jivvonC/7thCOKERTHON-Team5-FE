@@ -12,6 +12,7 @@
     "format:check": "prettier \"src/**/*.{ts,tsx,jsjsx,css,scss,json,md}\" --check"
   },
   "dependencies": {
+    "@iconscout/react-unicons": "^2.2.5",
     "@tailwindcss/vite": "^4.1.18",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
