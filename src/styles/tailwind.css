@@ -1,1 +1,206 @@
 @import 'tailwindcss';
+
+@theme {
+  /* red */
+  --color-R1: #fde6e6;
+  --color-R2: #fbd4d4;
+  --color-R3: #f9c4c4;
+  --color-R4: #f59999;
+  --color-R5: #f06d6d;
+  --color-R6: #ea4444;
+  --color-R7: #e31a1a;
+  --color-R8: #da0000;
+  --color-R9: #d20000;
+  --color-R10: #c90000;
+  --color-R11: #bb0000;
+  --color-R12: #ac0000;
+  --color-R13: #910000;
+  --color-R14: #880000;
+  --color-R15: #6d0a0a;
+  --color-R16: #6d0a0a;
+
+  /*black*/
+  --color-N1: #f8f8f9;
+  --color-N2: #f1f1f1;
+  --color-N3: #e5e5e4;
+  --color-N4: #d6d6d5;
+  --color-N5: #c0c0c0;
+  --color-N6: #a6a5a5;
+  --color-N7: #898989;
+  --color-N8: #777777;
+  --color-N9: #717171;
+  --color-N10: #6a6a6a;
+  --color-N11: #5f5f5f;
+  --color-N12: #545454;
+  --color-N13: #535051;
+  --color-N14: #3e3e3e;
+  --color-N15: #393c3c;
+
+  /*Others*/
+  --color-B: #131313;
+  --color-Pri-R: #ff0000;
+}
+
+body {
+  font-family: Pretendard, system-ui, sans-serif;
+}
+
+@layer components {
+  /* Title*/
+  .Title24_R {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title24_SB {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title24_EB {
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title20_R {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title20_SB {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title20_EB {
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title18_R {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title18_SB {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Title18_EB {
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  /*Subtitle*/
+  .Subtitle16_R {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Subtitle16_SB {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Subtitle16_EB {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Subtitle14_R {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Subtitle14_SB {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Subtitle14_EB {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  /*Body*/
+  .Body16_R {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body16_SB {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body16_EB {
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body14_R {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body14_SB {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body14_EB {
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body12_R {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body12_SB {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+  .Body12_EB {
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 150%;
+    letter-spacing: 0%;
+  }
+
+  /*Nav*/
+  .Navi_R {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: -3%;
+  }
+}
