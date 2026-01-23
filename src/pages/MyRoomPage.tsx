@@ -358,7 +358,7 @@ export default function MyRoomPage() {
           imageSrc="/img_delete.svg"
           imageAlt="삭제 이미지"
           message="방을 삭제할까요?"
-          buttonText="취소하기"
+          buttonText="네, 삭제할게요"
           buttonColor="primary"
           onButtonClick={handleDeleteRoom}
           onClose={() => {
@@ -374,7 +374,7 @@ export default function MyRoomPage() {
           imageSrc="/img_delete.svg"
           imageAlt="취소 이미지"
           message="방 참가를 취소할까요?"
-          buttonText="취소하기"
+          buttonText="네, 취소할게요"
           buttonColor="primary"
           onButtonClick={handleCancelParticipation}
           onClose={() => {
