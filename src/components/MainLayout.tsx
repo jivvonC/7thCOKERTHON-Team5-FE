@@ -17,7 +17,7 @@ function MainLayout() {
       {/* 실제 앱 화면(폭 제한) */}
       <div id="app-shell" className="w-[375px] h-[812px] bg-B shadow-lg flex flex-col relative">
         {/* 메인 콘텐츠 영역 */}
-        <main className="flex-1 overflow-y-auto pb-28">
+        <main className="flex-1 overflow-y-auto pb-28 scrollbar-hide">
           <Outlet />
         </main>
 
@@ -32,11 +32,11 @@ function MainLayout() {
             <button
               type="button"
               onClick={() => navigate('/search')}
-              className="w-44 inline-flex flex-col justify-start items-center gap-1.5"
+              className="w-44 Navi_R inline-flex flex-col justify-start items-center gap-1.5"
               aria-label="방구경"
             >
               <FiSearch className={`w-5 h-5 ${isSearchPage ? 'text-Pri-R' : 'text-gray-400'}`} />
-              <div className={`text-sm font-normal leading-5 ${isSearchPage ? 'text-Pri-R' : 'text-gray-400'}`}>방 찾기</div>
+              <div className={`Navi_R leading-5 ${isSearchPage ? 'text-Pri-R' : 'text-gray-400'}`}>방 찾기</div>
             </button>
 
             {/* 나의방 */}
