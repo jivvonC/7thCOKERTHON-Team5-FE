@@ -306,7 +306,10 @@ export default function RoomDetailPage() {
           imageAlt="완료 이미지"
           message="방 참여가 완료되었어요!"
           buttonText="확인"
-          onClose={() => setShowModal(false)}
+          onClose={() => {
+            setShowModal(false);
+            navigate('/search');
+          }}
         />
       )}
     </div>
