@@ -68,6 +68,7 @@
 </ul>
 
 <h2>🎥 시연 영상</h2>
+
 [![Video Label](http://img.youtube.com/vi/OgXJ7POQTsg/1.jpg)](https://youtu.be/OgXJ7POQTsg)
 
 <br><br>
