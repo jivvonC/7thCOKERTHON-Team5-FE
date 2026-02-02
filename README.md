@@ -5,8 +5,8 @@
   본 프로젝트는 사용자가 가볍게 ‘액티비티 모임’을 만들거나, 다른 사람이 만든 모임에 빠르게 참여할 수 있는 MVP 서비스를 제공합니다.
 </p>
 
-<img src="screenshot2.png" width="1080" height="800" alt="project screenshot" />
- <img src="app/src//homescreen.png" width="200" height="500">
+<img src="homescreen.png" width="200" height="500">
+<img src="detailspage.png" width="200" height="500">
 
 <h2>📄 프로젝트 소개</h2>
 <p>
