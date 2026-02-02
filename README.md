@@ -6,6 +6,7 @@
 </p>
 
 <img src="screenshot2.png" width="1080" height="800" alt="project screenshot" />
+ <img src="app/src//homescreen.png" width="200" height="500">
 
 <h2>📄 프로젝트 소개</h2>
 <p>
